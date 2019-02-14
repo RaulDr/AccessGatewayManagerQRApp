@@ -67,5 +67,5 @@ docker exec -it agmdb psql --username postgres -c "GRANT ALL PRIVILEGES ON DATAB
 ## The Application:
 
 ![CMD Run](https://github.com/RaulDr/AccessGatewayManagerQRApp/blob/develop/Pics/LoginPage.JPG)
-![CMD Run](https://github.com/RaulDr/AccessGatewayManagerQRApp/blob/develop/Pics/SwitchingCameraPopup.JPG)
-![CMD Run](https://github.com/RaulDr/AccessGatewayManagerQRApp/blob/develop/Pics/LogPage.JPG)
+![CMD Run](https://github.com/RaulDr/AccessGatewayManagerQRApp/blob/develop/Pics/SwitchingCameraPopup.jpg)
+![CMD Run](https://github.com/RaulDr/AccessGatewayManagerQRApp/blob/develop/Pics/LogPage.jpg)
