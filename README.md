@@ -1,12 +1,12 @@
 # accessGatewayManager
 
 # Technologies necessary:
--jdk 1.8+
--gradle
--node
--angular cli 2+
--postgres 
--docker ( you can skip postgres and create a postgres container with docker)
+jdk 1.8+
+gradle
+node
+angular cli 2+
+postgres 
+docker ( you can skip postgres and create a postgres container with docker)
 
 ## Description
 Ideea principala a aplicatiei este sa demonstreze ca accesul intr-o cladire se poate face prin intermediul scanarii
