@@ -1,0 +1,5 @@
+{
+    "name": "accessGatewayManager",
+    "description": "accessGatewayManager",
+    "addons": ["heroku-postgresql"]
+}

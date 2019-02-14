@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="card-header">
+        Today Access Log
+      </div>
+      <div class="card-block">
+        <div class="card-text" style="text-align: center">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <clr-icon shape="login" size="72"></clr-icon>
+              <br> {{accesslog.inTimestamp | date:'HH:mm a z'}}
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <clr-icon shape="logout" size="72"></clr-icon>
+              <br> {{accesslog.outTimestamp | date:'HH:mm a z'}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="card-header">
+        Monthly Access Log
+      </div>
+      <div class="card-block">
+        <div class="card-text">
+          <div class="card-text" style="text-align: center">
+            <span *ngIf="!workrecordready" class="spinner spinner-lg"></span>
+            <p-chart *ngIf="workrecordready" type="bar" [data]="workrecord"></p-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

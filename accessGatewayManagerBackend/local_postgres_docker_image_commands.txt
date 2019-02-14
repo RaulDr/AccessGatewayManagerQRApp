@@ -1,0 +1,7 @@
+docker run --name agmdb -p 5432:32768 -d postgres
+
+docker container update --restart=always agmdb
+
+docker exec -it agmdb psql --username postgres -c "CREATE DATABASE agm OWNER postgres;"
+
+docker exec -it agmdb psql --username postgres -c "GRANT ALL PRIVILEGES ON DATABASE agm TO postgres;"

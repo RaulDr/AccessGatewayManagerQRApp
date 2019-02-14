@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "module": "commonjs",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es5",
+    "typeRoots": ["node_modules/@types"],
+    "baseUrl": "./src",
+    "paths": {
+      "@app/*": ["app/*"]
+    },
+    "types": ["node", "jasmine", "systemjs"],
+    "lib": ["es2017", "dom"]
+  }
+}

@@ -1,0 +1,450 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AccessGatewayManager",
+		"_postman_id": "d960d31b-246b-3117-037e-34c083727236",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "workflow",
+			"description": "",
+			"item": [
+				{
+					"name": "successful login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+									"postman.setEnvironmentVariable(\"idUser\", jsonData.idUser);",
+									"postman.setEnvironmentVariable(\"username\", jsonData.username);",
+									"tests[\"Successful POST request\"] = responseCode.code === 200;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{backend}}/api/login/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"U3214\",\n  \"password\": \"anaare1234\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "successfulLogin1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"jwtToken\", jsonData.token);",
+									"postman.setEnvironmentVariable(\"idUser\", jsonData.idUser);",
+									"postman.setEnvironmentVariable(\"username\", jsonData.username);",
+									"tests[\"Successful POST request\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{backend}}/login/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken}}",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"U4333\",\n  \"password\": \"blabla$12FF\"\n}"
+						},
+						"description": null
+					},
+					"response": [
+						{
+							"id": "5310df2b-7aa7-4af1-aa0e-5d8d186a7f4d",
+							"name": "login",
+							"originalRequest": {
+								"url": "https://fd111cba-433d-49c8-9ab9-720104812d77.mock.pstmn.io/api/authenticate",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtToken}}",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"U4367\",\n  \"password\": \"blabSSa@nc12Hj\"\n}"
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "successfulLogin2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"jwtToken\", jsonData.token);",
+									"postman.setEnvironmentVariable(\"idUser\", jsonData.idUser);",
+									"postman.setEnvironmentVariable(\"username\", jsonData.username);",
+									"tests[\"Successful POST request\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{backend}}/login/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken}}",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"U4321\",\n  \"password\": \"blabla$12FF\"\n}"
+						},
+						"description": null
+					},
+					"response": [
+						{
+							"id": "ea9f8910-cf00-4f05-8272-3cde663be65a",
+							"name": "login",
+							"originalRequest": {
+								"url": "https://fd111cba-433d-49c8-9ab9-720104812d77.mock.pstmn.io/api/authenticate",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtToken}}",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"U4367\",\n  \"password\": \"blabSSa@nc12Hj\"\n}"
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "successfulLogin4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"jwtToken\", jsonData.token);",
+									"postman.setEnvironmentVariable(\"idUser\", jsonData.idUser);",
+									"postman.setEnvironmentVariable(\"username\", jsonData.username);",
+									"tests[\"Successful POST request\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{backend}}/login/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken}}",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"U4367\",\n  \"password\": \"blabSSa@nc12Hj\"\n}"
+						},
+						"description": null
+					},
+					"response": [
+						{
+							"id": "eb32726f-cb7c-42fc-b691-a09f902a6ee7",
+							"name": "login",
+							"originalRequest": {
+								"url": "https://fd111cba-433d-49c8-9ab9-720104812d77.mock.pstmn.io/api/authenticate",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwtToken}}",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"U4367\",\n  \"password\": \"blabSSa@nc12Hj\"\n}"
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "gateway access",
+					"request": {
+						"url": "{{backend}}/api/gateway/access",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idUser\": \"{{idUser}}\",\n\t\"gateName\": \"gate\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "gateway user's access logs",
+					"request": {
+						"url": "{{backend}}/api/gateway/access/log/{{idUser}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "gateway user's access log for today",
+					"request": {
+						"url": "{{backend}}/api/gateway/access/log/{{idUser}}/today",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "gateway user's filtered access logs",
+					"request": {
+						"url": "{{backend}}/api/gateway/access/log/{{idUser}}/filter",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"inTimestamp\": \"2018-06-22T10:16:52.36\",\n\t\"outTimestamp\": \"2018-06-22T22:22:52.36\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "testFromControllerToDb-helloController(should save a new user and a gate for him)",
+			"request": {
+				"url": "{{backend}}/api/hello",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "gateway access logs",
+			"request": {
+				"url": "{{backend}}/api/admin/accessLogs",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create user account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"postman.setEnvironmentVariable(\"idUser\", jsonData.idUser);",
+							"postman.setEnvironmentVariable(\"username\", jsonData.username);",
+							"tests[\"Successful POST request\"] = responseCode.code === 200;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{backend}}/api/admin/createAccount",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"FakeUser\",\n  \"password\": \"anaare1234\",\n  \"isAdmin\": \"true\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

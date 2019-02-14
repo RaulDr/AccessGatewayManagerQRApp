@@ -1,0 +1,37 @@
+version: '2.1'
+
+services:
+  app:
+    build:
+      context: ./
+    environment:
+      - PORT=80
+      - DB_URL=jdbc:postgresql://database:32768/agmdb?user=postgres&password=postgres
+      - DATABASE_USER:postgres
+      - DATABASE_PASSWORD:postgres
+    ports:
+      - "8080:8080"
+      - "80:80"
+      - "5858:5858"
+      - "9229:9229"
+    links:
+      - database
+    depends_on:
+      - database
+    volumes:
+      - ./:/usr/app
+  database:
+    image: postgres
+    ports:
+      - "32768:5432"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "agmdb"
+    # logging:
+    #     driver: none
+    volumes:
+      - ./postgresdb/create.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./postgresdb/insert.sql:/docker-entrypoint-initdb.d/2-data.sql
+volumes:
+    notused:

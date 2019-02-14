@@ -1,0 +1,14 @@
+<div class="login-wrapper">
+  <form class="login" [formGroup]="loginForm" (ngSubmit)="submitCredentials()">
+    <label class="title">
+      <h3 class="welcome">Welcome to</h3>
+      Access Gateway Manager
+    </label>
+    <div class="login-group">
+      <input class="username" type="text" formControlName="username" id="login_username" placeholder="Username">
+      <input class="password" type="password" formControlName="password" id="login_password" placeholder="Password">
+      <div *ngIf="loginErr" class="error active">Invalid user name or password</div>
+      <button type="submit" class="btn btn-primary">login</button>
+    </div>
+  </form>
+</div>
